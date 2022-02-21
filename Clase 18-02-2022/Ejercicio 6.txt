@@ -1,0 +1,37 @@
+//Dado una cadena muestre todas las subcadenas en orden lexicografico
+//INPUT: AABC
+//OUTPUT: A A AA AAB AABC AB ABC B BC C 
+//-----------------------------------------------------------------------------
+
+lexicografico(s){
+	int tam = strLen(s) //strLen(cad): devuelve el tamaño de la cadena cad
+	int sumatoria <- (tam * (tam + 1)) / 2; //nro. de subcadenas
+	int subcad[sumatoria]; //guardaremos toda las subcadenas en el vector subcad
+	int k <- 0;
+	for(i <- 0 to strLen(s) - 1){
+		for(j <- i to strLen(s) - 1){
+			subcad[k] <- strSub(s, i, j - i + 1);//strSub(nombreCadena, inicioPos, nroCaracteres);
+			k <- k + 1;
+		}
+	}
+	//ordenamos el vector de cadenas subcad
+	for(i <- 0 to strlen(subcad) - 2){
+		for(j <- i  + 1 to strlen(subcad) - 1){
+			if(subcad[j] < subcad[i]){
+				aux <- subcad[i];
+                		subcad[i] <- subcads[j];
+                		subcad[j] <- aux;
+			}
+		}
+	}
+	//mostramos el vector de cadenas ordenado
+	for(i <- 0 to strLen(subcad) - 1){
+		print(subcad[i])
+	}
+}
+
+main(){
+	string s;
+	read(s);
+	lexicografico(s); //llamamos al procedimiento
+}
