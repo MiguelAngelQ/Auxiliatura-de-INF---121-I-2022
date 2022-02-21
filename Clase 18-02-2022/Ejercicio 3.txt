@@ -1,0 +1,16 @@
+//Leer n números(enteros positivos y negativos) y determinar cuantos han sido mayores a cero
+//INPUT: 5
+//       4 -5 9 32 -14 
+//OUTPUT: 3
+main(){
+	int n, cont <- 0;
+	read(n);
+	for(i <- 1 to n){
+		int x;
+		read(x);
+		if(x > 0){
+			cont <- cont + 1;
+		}
+	}
+	print(cont);
+}

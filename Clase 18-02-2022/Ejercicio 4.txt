@@ -1,0 +1,15 @@
+//Generar la serie de Fibonacci para n elementos
+//INPUT: 7
+//       0 1 1 2 3 5 8 
+//OUTPUT: 3
+main(){
+	int n;
+	read(n);
+	int a <- -1, b <- 1;
+	for(i <- 1 to n){
+		int c <- a + b;
+		print(c);
+		a <- b;
+		b <- c;
+	}
+}

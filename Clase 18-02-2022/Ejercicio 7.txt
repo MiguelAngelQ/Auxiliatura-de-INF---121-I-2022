@@ -1,0 +1,22 @@
+//Dada una matriz cuadrada(n filas * n colmunas) hallar la suma de la diagonal prinicipal
+//INPUT: 4
+//       1 2 3 4
+//       5 6 7 8
+//       9 10 11 12
+//       13 14 15 16 
+//OUTPUT: 34
+main(){
+	int n;
+	read(n);
+	int matriz[n, n]; //filas, columnas
+	for(i <- 0 to n - 1){
+		for(j <- 0 to n - 1){
+			read(matriz[i, j]);
+		}
+	}
+	int suma <- 0;
+	for(i <- 0 to n - 1){
+		suma <- suma + matriz[i, i];
+	}
+	print(suma)
+}
