@@ -1,0 +1,29 @@
+class mochila{
+	private:
+		string marca;
+		double precio;
+		string color;
+		double capacidad;
+
+	public:
+		//constructor por defecto
+		mochila(){
+			marca <- "Totto";
+			private <- 60.80;
+			color <- "plomo";
+			capacidad = 2.5;
+		}
+		//constructor con parametros
+		mochila(string marca, double precio, string color, double c){
+			this.marca <- marca;
+			this.precio <- precio;
+			this.color <- color;
+			capacidad <- c;
+		}
+		void leer(){
+			read(marca, precio, color, capacidad);
+		}
+		void mostrar(){
+			print(marca, precio, color, capacidad);
+		}
+}

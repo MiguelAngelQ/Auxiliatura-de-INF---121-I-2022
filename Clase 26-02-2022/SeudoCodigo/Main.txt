@@ -1,0 +1,10 @@
+
+main{
+	mochila a <- new mochila();//con constructor por defecto
+	a.mostrar();
+	mochila m <- new mochila("Adidas", 200, "naranjado", 10.2);
+	m.mostrar();
+	mochila h <- new mochila();
+	h.leer();
+	h.mostrar();
+}
