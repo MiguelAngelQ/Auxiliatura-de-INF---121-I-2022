@@ -1,0 +1,54 @@
+main(){
+	//a
+	mascota a <- new mascota();
+	mascota b <- new mascota("Boby", "perro", 2, "chapi", "pequeño", 10);
+	mascota c <- new mascota("Poly", "loro", 3, "tropical", "pequeño", 1);
+	mascota d <- new mascota("Michi", "gato", 5, "angora", "mediano", 10);
+	a.mostrar();
+	b.mostrar();
+	c.mostrar();
+	d.mostrar();
+	//b
+	a.leer();
+	a.mostrar();
+	//c
+	print("Introduzca raza: ");
+	string x;
+	read(x);
+	if(a.verificaRazaX(x) = true or b.verificaRazaX(x) = true or c.verificaRazaX(x) = true or d.verificaRazaX(x) = true){
+		print("Se tiene a la mascota con raza ", x);
+	}else{
+		print("No se tiene a la mascota con raza ", x);
+	}
+	//d
+	print("Introduzca tipo: ");
+	read(x);
+	print("Introduzca edad: ");
+	int y;
+	read(y);
+	if(a.verificarTipoXMayorEdadY(x, y) = true){
+		a.mostrar();
+	}
+	if(b.verificarTipoXMayorEdadY(x, y) = true){
+		b.mostrar();
+	}
+	if(c.verificarTipoXMayorEdadY(x, y) = true){
+		c.mostrar();
+	}
+	if(d.verificarTipoXMayorEdadY(x, y) = true){
+		d.mostrar();
+	}	
+	//e
+	if(a.esTipoPerro() = true){
+		a.verificaSuPeso();
+	}
+	if(b.esTipoPerro() = true){
+		b.verificaSuPeso();
+	}
+	if(c.esTipoPerro() = true){
+		c.verificaSuPeso();
+	}
+	if(d.esTipoPerro() = true){
+		d.verificaSuPeso();
+	}	
+}

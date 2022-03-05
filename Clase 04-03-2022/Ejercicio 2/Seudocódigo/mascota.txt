@@ -1,0 +1,86 @@
+class mascota(){
+	private:
+		string nombre;
+		string tipo;
+		int edad;
+		string raza;
+		string tamaño;
+		int peso;
+	public:
+		mascota(){
+			nombre <- "Tobby";
+			tipo <- "perro";
+			edad <- 8;
+			raza <- "pastor aleman";
+			tamaño <- "mediano";
+			peso <- 40;
+		}
+		mascota(string n, string t, int e, string r, string ta, int p){
+			nombre <- n;
+			tipo <- t;
+			edad <- e;
+			raza <- r;
+			tamaño <- ta;
+			peso <- p;
+		}
+		void leer(){
+			read(nombre, tipo, edad, raza, tamaño, peso);
+		}
+		void mostrar(){
+			print(nombre, tipo, edad, raza, tamaño, peso);
+		}
+		bool verificaRazaX(string x){//no se si es bool o boolean
+			if(raza = x){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		bool verificarTipoXMayorEdadY(string x, int y){//x tipo, y edad
+			if(tipo = x and edad > y)
+				return true;
+			return false;
+		}
+		bool esTipoPerro(){
+			if(tipo = "perro"){
+				return true;
+			}
+			return false;
+		}
+		void verificaSuPeso(){
+			print("El perro ", nombre, " tiene ");
+			if(tamaño = "pequeño"){
+				if(peso < 10){
+					print("Peso bajo");
+				}else{
+					if(peso > 15){
+						print("Sobrepeso");
+					}else{
+						print("Peso normal");
+					}
+				}
+			}else{
+				if(tamaño = "mediano"){
+					if(peso < 15){
+						print("Peso bajo");
+					}else{
+						if(peso > 25){
+							print("Sobrepeso");
+						}else{
+							print("Peso normal");
+						}
+					}
+				}else{
+					if(peso < 25){
+						print("Peso bajo");
+					}else{
+						if(peso > 45){
+							print("Sobrepeso");
+						}else{
+							print("Peso normal");
+						}
+					}
+				}
+			}
+		}
+}

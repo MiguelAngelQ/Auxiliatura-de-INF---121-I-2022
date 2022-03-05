@@ -1,0 +1,19 @@
+main(){
+	//a
+	docente a <- new docente();
+	a.leer();
+	docente b <- new docente("Fernando", "Apaza", "Flores", 3400.80, "LIN-116");
+	//b
+	a.mostrar();
+	b.mostrar();
+	//c
+	a.mayorSueldo(b);
+	//d
+	print("Introduzca area nueva de trabajo: ");
+	string x;
+	read(x);
+	b.modificarArea(x);
+	b.mostrar();
+	//e
+	a.mismaArea(b);
+}

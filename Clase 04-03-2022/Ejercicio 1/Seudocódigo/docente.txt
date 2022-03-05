@@ -1,0 +1,51 @@
+class docente{
+	private:
+		string nombre;
+		string paterno;
+		string materno;
+		double sueldo;
+		string area;
+
+	public:
+		//constructor por defecto:
+		docente(){
+			nombre <- "Juan";
+			paterno <- "Perez";
+			materno <- "Perez";
+			sueldo <- 1789.00;
+			area <- "INF-111";
+		}
+		//constructor parametrizado
+		docente(string nombre, string pat, string materno, double sueldo, string area){
+			this.nombre <- nombre;
+			paterno <- pat;
+			this.materno <- materno;
+			this.sueldo <- sueldo;
+			this.area <- area;
+		}
+		leer(){
+			read(nombre, paterno, materno, sueldo, area);
+		}
+		mostrar(){
+			print(nombre, paterno, materno, sueldo, area);
+		}
+		void mayorSueldo(docente x){
+			if(this.sueldo > x.sueldo){
+				print(this.nombre, this.paterno, this.materno);
+			}else{
+				print(x.nombre, x.paterno, x.materno);
+			}
+		}
+		void modificarArea(string x){
+			area <- x;
+			//this.area <- x;
+		}
+		void mismaArea(docente x){
+			if(area = x.area){
+				print(nombre, sueldo);
+				print(x.nombre, x.sueldo);
+			}else{
+				print("No son de la misma area");
+			}
+		}
+}
