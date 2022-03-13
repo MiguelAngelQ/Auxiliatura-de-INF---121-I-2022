@@ -1,0 +1,29 @@
+main(){
+	//a
+	dueño a <- new dueño();
+	dueño b <- new dueño();
+	mascota v <- new mascota();
+	mascota w <- new mascota();
+	a.leer();
+	b.leer();
+	a.mostrar();
+	b.mostrar();
+	v.leer();
+	w.leer();
+	v.mostrar();
+	w.mostrar();
+	//b
+	string x;
+	read(x);
+	if(a.getNombre() = x){
+		a.ordenarMascotas(v, w);
+		a.mostrar();
+	}
+	if(b.getNombre() = x){
+		b.ordenarMascotas(v, w);
+		b.mostrar();
+	}
+	//c
+	a.inicisoC(v, w);
+	b.inicisoC(v, w);
+}

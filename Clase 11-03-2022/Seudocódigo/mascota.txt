@@ -1,0 +1,45 @@
+class mascota{
+	private:
+		string nombre;
+		int edad;
+		string tipo;
+		int anioVacuna;
+		string codRegistro;
+	public:
+		mascota(){
+			nombre <- "Duke";
+			edad <- 1;
+			tipo <= "pastor aleman";
+			anioVacuna <- 2022;
+			codRegistro <- "123AB";
+		}
+		mascota(string nombre, int e, string t, int a, string c){
+			this.nombre <- nombre;
+			edad <- e;
+			tipo <- t;
+			anioVacuna <- a;
+			codRegistro <- c;
+		}
+		leer(){
+			read(nombre, edad, tipo, anioVacuna, codRegistro);
+		}
+		mostrar(){
+			print(nombre, edad, tipo, anioVacuna, codRegistro);
+		}
+		string getNombre(){
+			return nombre;
+		}
+		int getEdad(){
+			return edad;
+		}
+		string getTipo(){
+			return tipo;
+		}
+		int getAnioVacuna(){
+			return anioVacuna;
+		}
+		string getCodRegistro(){
+			return codRegistro;
+		}
+		//setters
+}

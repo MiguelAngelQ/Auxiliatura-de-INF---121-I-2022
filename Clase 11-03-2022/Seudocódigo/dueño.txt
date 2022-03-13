@@ -1,0 +1,68 @@
+class dueño{
+	private:
+		string nombre;
+		int nroMascotas;
+		string m[5];
+	public:
+		dueño(){
+			nombre <- "Alan Brito";
+			nroMascotas <- 0;
+		}
+		dueño(string nombre, int nroMascotas){
+			this.nombre <- nombre;
+			this.nroMascotas <- nroMascotas;
+			for(i <- 0 to nroMascotas - 1){
+				read(m[i]);
+			}
+		}
+		leer(){//no se coloca void en Seudo
+			read(nombre, nroMascotas);
+			for(i <- 0 to nroMascotas - 1){
+				read(m[i]);
+			}
+		}
+		mostrar(){
+			print(nombre, nroMascotas);
+			for(i <- 0 to nroMascotas - 1){
+				print(m[i]);
+			}
+		}
+		ordenarMascotas(mascota a, mascota b){
+			if(nroMascotas = 2){
+				int edades[nroMascotas];
+				for(i <- 0 to nroMascotas - 1){
+					if(a.getCodRegistro() = m[i])
+						edades[i] <- a.getEdad();
+					if(b.getCodRegistro() = m[i])
+						edades[i] <- b.getEdad();	
+				}
+				if(edades[0] > edades[1]){
+					string aux <- m[0];
+					m[0] <- m[1];
+					m[1] <- aux;
+				}
+			}
+		}
+		inicisoC(mascota a, mascota b){
+			for(i <- 0 to nroMascotas - 1){
+				if(m[i] = a.getCodRegistro() and a.getTipo() = "perro"){
+					print(a.getAnioVacuna());
+				}
+				if(m[i] = b.getCodRegistro() and b.getTipo() = "perro"){
+					print(b.getAnioVacuna());
+				}
+			}
+		}
+		string getNombre(){
+			return nombre;
+		}
+		string getNroMascotas(){
+			return nroMascotas;
+		}
+		setNombre(string n){
+			nombre <- n;
+		}
+		getNroMascotas(int nro){
+			nroMascotas <- nro;
+		}
+}
