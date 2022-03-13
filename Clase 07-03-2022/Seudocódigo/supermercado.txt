@@ -1,0 +1,73 @@
+class supermercado{
+	//atributos:
+	private:
+		string nombre, direccion;
+		int nroProductos;
+		string productos[50,3];
+	public:
+		supermercado(){
+			nombre <- "Fidalga 3.0";
+			direccion <- "Plaza Avaroa, Esq. Azpiazu, No. 1234";
+			nroProductos <- 1;
+			productos[0, 0] <- "mantequilla";
+			productos[0, 1] <- "45";
+			productos[0, 2] <- "12";
+		}
+		supermercado(string n, string d){
+			nombre <- n;
+			direccion <- d;
+			nroProductos <- 0;
+		}
+		leer(){
+			read(nombre, direccion, nroProductos);
+			for(i <- 0 to nroProductos - 1){
+				read(productos[i, 0], productos[i, 1], productos[i, 2])
+			}
+		}
+		mostrar(){
+			print(nombre, direccion, nroProductos);
+			for(i <- 0 to nroProductos - 1){
+				print(productos[i, 0], productos[i, 1], productos[i, 2])
+			}
+		}
+		//metodo: cuanto stock tengo del producto x
+		int stockDelProductoX(string x){
+			for(i <- 0 to nroProductos - 1){
+				if(productos[i, 0] = x){//buscando al producto x
+					return strVal(productos[i, 1]);//strVal(cadena): convierte a int una string
+				}
+			}
+			return 0;//peor de los casos
+		}
+		//metodo: muestra los productos mas baratos del mercado this contra el x
+		comparar(supermercado x){
+			print("Productos mas baratos del supermercado ", this.nombre, " contra el supermercado ", x.nombre);
+			for(i <- 0 to this.nroProductos - 1){
+				for(j <- 0 to x.nroProductos - 1){
+					if(this.productos[i, 0] = x.productos[j, 0]){
+						if(strVal(this.productos[i, 2]) < strVal(x.productos[j, 2])){
+							print(this.productos[i, 0]);
+						}
+					}
+				}
+			}
+		}
+		string getNombre() {
+			return nombre;
+		}
+		setNombre(string nombre) {
+			this.nombre <- nombre;
+		}
+		string getDireccion() {
+			return direccion;
+		}
+		setDireccion(string direccion) {
+			this.direccion <- direccion;
+		}
+		int getNroProductos() {
+			return nroProductos;
+		}
+		setNroProductos(int nroProductos) {
+			this.nroProductos <- nroProductos;
+		}
+}

@@ -1,0 +1,29 @@
+main(){
+	///a
+	supermercado a <- new supermercado();
+	supermercado b <- new supermercado("Ketal 5", "Av. Ovando, Esq. Colon, Nro. 456");
+	a.leer();
+	b.leer();
+	//b
+	a.mostrar();
+	b.mostrar();
+	//c
+	print("Into producto: ");
+	string x;
+	read(x);
+	if(a.stockDelProductoX(x) = 0 and b.stockDelProductoX(x) = 0){//ambos no tienen stock
+		print("Ambos supermercados no tienen stock");
+	}else{
+		if(a.stockDelProductoX(x) = b.stockDelProductoX(x)){
+			print("Ambos supermercados tienen el mismo stock");
+		}else{
+			if(a.stockDelProductoX(x) > b.stockDelProductoX(x)){
+				print("El supermercado ", a.getNombre(), " tiene mas stock");
+			}else{
+				print("El supermercado ", b.getNombre(), " tiene mas stock");
+			}	
+		}
+	}
+	//d
+	a.comparar(b);
+}
