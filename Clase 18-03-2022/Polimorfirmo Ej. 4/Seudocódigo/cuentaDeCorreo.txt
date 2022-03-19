@@ -1,0 +1,82 @@
+class cuentaDeCorreo{
+	private:
+		int nroMensajes;
+		string sms[5, 50];
+	public:
+		cuentaDeCorreo(){
+			nroMensajes <- 0;
+		}
+		cuentaDeCorreo(int nroMensajes){
+			this.nroMensajes <- nroMensajes;
+			for(i <- 0 to nroMensajes - 1){
+				read(sms[0, i], sms[1, i], sms[2, i], sms[3, i], sms[4, i]);
+			}
+		}
+		cuentaDeCorreo(string autor, string fecha, string tamaño, string motivo, string mensaje){
+			nroMensajes <- 1;
+			sms[0, 0] <- autor;
+			sms[1, 0] <- fecha;
+			sms[2, 0] <- tamaño;
+			sms[3, 0] <- motivo;
+			sms[4, 0] <- mensaje;
+		}
+		leer(){
+			read(nroMensajes);
+			for(i <- 0 to nroMensajes - 1){
+				read(sms[0, i], sms[1, i], sms[2, i], sms[3, i], sms[4, i]);
+			}
+		}
+		mostrar(){
+			print(nroMensajes);
+			for(i <- 0 to nroMensajes - 1){
+				print(sms[0, i], sms[1, i], sms[2, i], sms[3, i], sms[4, i]);
+			}
+		}
+		mostrar(string fecha){//dd/mm/aa
+			for(i <- 0 to nroMensajes - 1){
+				if(sms[1, i] = fecha){
+					print(sms[0, i], sms[1, i], sms[2, i], sms[3, i], sms[4, i]);
+				}
+			}
+		}
+		mostrar(string autor, int y){
+			for(i <- 0 to nroMensajes - 1){
+				if(sms[0, i] = autor and strVal(sms[2, i]) < y){
+					print(sms[0, i], sms[1, i], sms[2, i], sms[3, i], sms[4, i]);
+				}
+			}
+		}
+		comparar(cuentaDeCorreo a){
+			if(this.nroMensajes > a.nroMensajes){
+				this.mostrar();
+			}
+			if(a.nroMensajes > this.nroMensajes){
+				a.mostrar();
+			}
+			if(this.nroMensajes = a.nroMensajes){
+				print("ambos correos tienen el mismo nro. de mensajes");
+			}
+		}
+		int cantidadAutorX(string autor){
+			int res <- 0;
+			for(i <- 0 to nroMensajes - 1){
+				if(sms[0, i] = autor){
+					res <- res + 1;
+				}
+			}
+			return res;
+		}
+		comparar(cuentaDeCorreo a, string autor){
+			if(this.cantidadAutorX(autor) > a.cantidadAutorX(autor)){
+				this.mostrar();
+			}
+			if(a.cantidadAutorX(autor) > this.cantidadAutorX(autor)){
+				a.mostrar();
+			}
+			if(this.cantidadAutorX(autor) = a.cantidadAutorX(autor)){
+				print("ambos correos tienen el mismo nro. de mensajes del auto", autor);
+			}
+		}
+		//getters 
+		//setters
+}

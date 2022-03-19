@@ -1,0 +1,21 @@
+main(){
+	//a
+	cuentaDeCorreo a <- new cuentaDeCorreo();
+	cuentaDeCorreo b <- new cuentaDeCorreo("Alan Brito", "23/07/2021", "3", "salud", "Quedate en casa");
+	cuentaDeCorreo c <- new cuentaDeCorreo();
+	c.leer();
+	//b
+	string fecha;
+	read(fecha);
+	c.mostrar(fecha);
+	//c
+	string autor;
+	int y;
+	read(autor, y);
+	c.mostrar(autor, y);
+	//d
+	b.comparar(c);
+	//e
+	read(autor);
+	b.comparar(c, autor);
+}
