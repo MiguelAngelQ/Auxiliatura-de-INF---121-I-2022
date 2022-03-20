@@ -65,10 +65,6 @@ public class cuentaDeCorreo {
 		}
 	}
 
-	public void setNroMensajes(int nroMensajes) {
-		this.nroMensajes = nroMensajes;
-	}
-
 	public void comparar(cuentaDeCorreo a) {
 		if (this.nroMensajes > a.nroMensajes) {
 			this.mostrar();
@@ -105,5 +101,10 @@ public class cuentaDeCorreo {
 
 	public int getNroMensajes() {
 		return nroMensajes;
+	}
+	
+
+	public void setNroMensajes(int nroMensajes) {
+		this.nroMensajes = nroMensajes;
 	}
 }
