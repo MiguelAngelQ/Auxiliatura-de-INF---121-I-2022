@@ -1,0 +1,23 @@
+main(){
+    //a
+    farmacia a <- new farmacia();
+    farmacia b <- new farmacia("Chavez");
+    farmacia c <- new farmacia();
+    c.leer();
+    //b
+    ++c;
+    //c
+    int z;
+    read(z);
+    c+z;
+    //d
+    c.mostrar(true);
+    //e
+    string nomX;
+    read(nomX);
+    c.mostrar(nomX);
+    //f
+    string x;
+    read(x);
+    c.mostrar(b, x);
+}
