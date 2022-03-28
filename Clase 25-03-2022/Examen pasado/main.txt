@@ -9,7 +9,7 @@ main(){
     //c
     int z;
     read(z);
-    c+z;
+    c <- c+z;
     //d
     c.mostrar(true);
     //e
