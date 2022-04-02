@@ -1,0 +1,68 @@
+class casa{
+    private:
+        int ciDueño;
+        string color;
+        string ubicacion;
+        int nroTipoHabitaciones;
+        string tipoHabitaciones[100];
+    public:
+        casa(){
+            ciDueño <- 10589655;
+            color <- "azul";
+            ubicacion <- "zona sur";
+            nroTipoHabitaciones <- 1;
+            tipoHabitaciones[0] <- "Dormitorio";
+        }
+        casa(int ciDueño, string color, string ubicacion){
+            this.ciDueño <- ciDueño;
+            this.color <- color;
+            this.ubicacion <- ubicacion;
+            nroTipoHabitaciones <- 3;
+            tipoHabitaciones[0] <- "Dormitorio";
+            tipoHabitaciones[1] <- "Cocina";
+            tipoHabitaciones[2] <- "Baño";
+        }
+        leer(){
+            read(ciDueño, color, ubicacion, nroTipoHabitaciones);
+            for(i <- to nroTipoHabitaciones - 1){
+                read(tipoHabitaciones[i]);
+            }
+        }
+        mostrar(){
+            print(ciDueño, color, ubicacion, nroTipoHabitaciones);
+            for(i <- 0 to nroTipoHabitaciones - 1){
+                print(tipoHabitaciones[i]);
+            }
+        }
+        ordenar_ascendente(){
+            for(i <- 0 to nroTipoHabitaciones - 2){
+                for(j <- i + 1 to nroTipoHabitaciones - 1){
+                    if(tipoHabitaciones[i] > tipoHabitaciones[j]){
+                        string aux <- tipoHabitaciones[i];
+                        tipoHabitaciones[i] <- tipoHabitaciones[j];
+                        tipoHabitaciones[j] <- aux;
+                    }
+                }
+            }
+        }
+        int contar(string x){
+            int res = 0;
+            for(i <- 0 to nroTipoHabitaciones - 1){
+                if(tipoHabitaciones[i] = x){
+                    res <- res + 1;
+                }
+            }
+            return res;
+        }
+        int getCIDueño(){
+            return ciDueño;
+        }
+        casa operador --(casa x){
+            int nroHabElimina;
+            read(nroHabElimina);
+            for(i <- nroHabElimina to nroTipoHabitaciones - 1){
+                tipoHabitaciones[i] <- tipoHabitaciones[i + 1];
+            }
+            nroTipoHabitaciones = nroTipoHabitaciones - 1;
+        }
+}

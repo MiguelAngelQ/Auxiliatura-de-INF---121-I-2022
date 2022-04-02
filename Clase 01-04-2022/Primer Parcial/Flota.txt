@@ -1,0 +1,87 @@
+class Flota{
+    private:
+        string Placa;
+        int Capacidad;
+        int NroPasajeros
+        string Pasajero[50, 4];
+    public:
+        Flota(){
+            Placa <- "1940ZIP";
+            Capacidad <- 40;
+            NroPasajeros <- 0;
+        }
+        Flota(string Placa, int Capacidad, string nombre, string edad, string genero, string asiento){
+            this.Placa <- Placa;
+            this.Capacidad <- Capacidad;
+            NroPasajeros <- 1;
+            Pasajero[0, 0] <- nombre;
+            Pasajero[0, 1] <- edad;
+            Pasajero[0, 2] <- genero;
+            Pasajero[0, 3] <- asiento;
+        }
+        leer(){
+            read(Placa, Capacidad, NroPasajeros);
+            for(i <- 0 to NroPasajeros - 1){
+                read(Pasajero[i, 0], Pasajero[i, 1], Pasajero[i, 2], Pasajero[i, 3]);
+            }
+        }
+        mostrar(){
+            print(Placa, Capacidad, NroPasajeros);
+            for(i <- 0 to NroPasajeros - 1){
+                print(Pasajero[i, 0], Pasajero[i, 1], Pasajero[i, 2], Pasajero[i, 3]);
+            }
+        }
+        Flota operator /(Flota a, string x){
+            //encontrar la mayor edad de genero X
+            int edadMaxima <- -1;//el menor vcalor posible
+            for(i <- to a.NroPasajeros - 1){
+                if(a.Pasajero[i, 2] = x){
+                    if(strVal(a.Pasajero[i, 1]) > edadMaxima){
+                        edadMaxima <- strVal(a.Pasajero[i, 1]);
+                    }
+                }
+            }
+            if(edadMaxima = -1){
+                print("No hay pasajero de genero ", x)
+            }else{
+                for(i <- to a.NroPasajeros - 1){
+                    if(a.Pasajero[i, 2] = x){
+                        if(strVal(a.Pasajero[i, 1]) = edadMaxima){
+                            print(a.Pasajero[i, 0], a.Pasajero[i, 1], a.Pasajero[i, 2], a.Pasajero[i, 3]);
+                        }
+                    }
+                }
+            }
+            return a;
+        }
+        Flota operator +(Flota a, Flota b){
+            for(i <- to a.NroPasajeros - 1){
+                bool sw <- false;//no esta en la segunda flota
+                for(j <- to b.NroPasajeros - 1){
+                    if(a.Pasajero[i, 0] = b.pasajero[j, 0] and a.Pasajero[i, 1] = b.pasajero[j, 1] and a.Pasajero[i, 2] = b.pasajero[j, 2]){
+                        sw <- true;
+                    }
+                }
+                if(sw = false){
+                    print(a.Pasajero[i, 0], a.Pasajero[i, 1], a.Pasajero[i, 2], a.Pasajero[i, 3]);
+                }
+            }
+            return a;
+        }
+        mostrar(bool sw){
+            bool sw <- true;//Hombres en pares, mujeres en impares
+            for(i <- to NroPasajeros - 1){
+                if(Pasajero[i, 2] = "Masculino" and strVal(Pasajero[i, 3]) % 2 = 1){
+                    sw <- false;
+                }
+                if(Pasajero[i, 2] = "Femenino" and strVal(Pasajero[i, 3]) % 2 = 0){
+                    sw <- false;
+                }
+            }
+            if(sw = true){
+                print("Alexis sera feliz en su viaje :)");
+            }else{
+                print("Alexis no sera feliz en su viaje :(")
+            }
+        }
+}

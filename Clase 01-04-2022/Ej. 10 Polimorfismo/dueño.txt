@@ -1,0 +1,98 @@
+class dueño{
+    private:
+        int ciDueño;
+        string nombre;
+        string apellido;
+        int edad;
+    public:
+        dueño(){
+            ciDueño <- 10589655;
+            nombre <- "Alan";
+            apellido <- "Brito";
+            edad <- 36;
+        }
+        dueño(int ciDueño,string nombre, string apellido, int edad){
+            this.ciDueño <- ciDueño;
+            this.nombre <- nombre;
+            this.apellido <- apellido;
+            this.edad <- edad;
+        }
+        leer(){
+            read(ciDueño, nombre, apellido, edad);
+        }
+        mostrar(){
+            print(ciDueño, nombre, apellido, edad);
+        }
+        comparar(dueño a, dueño, b, dueño, c, casa w, casa, x, casa y, casa z, string habX){
+            int maximoNro <- w.contar(habX);
+            if(x.contar(habX) > maximoNro){
+                maximoNro <- x.contar(habX);
+            }
+            if(y.contar(habX) > maximoNro){
+                maximoNro <- y.contar(habX);
+            }
+            if(z.contar(habX) > maximoNro){
+                maximoNro <- z.contar(habX);
+            }
+            if(maximoNro = 0){
+                print("ni una casa tiene habitacion de tipo ", habX);
+            }else{
+                if(w.contar(habX) = maximoNro){
+                    if(w.getCIDueño() = this.ciDueño){
+                        print(this.ciDueño, this.nombre, this.apellido, this.edad);
+                    }
+                    if(w.getCIDueño() = a.ciDueño){
+                        print(a.ciDueño, a.nombre, a.apellido, a.edad);
+                    }
+                    if(w.getCIDueño() = b.ciDueño){
+                        print(b.ciDueño, b.nombre, b.apellido, b.edad);
+                    }
+                    if(w.getCIDueño() = c.ciDueño){
+                        print(c.ciDueño, c.nombre, c.apellido, c.edad);
+                    }
+                }
+                if(x.contar(habX) = maximoNro){
+                    if(x.getCIDueño() = this.ciDueño){
+                        print(this.ciDueño, this.nombre, this.apellido, this.edad);
+                    }
+                    if(x.getCIDueño() = a.ciDueño){
+                        print(a.ciDueño, a.nombre, a.apellido, a.edad);
+                    }
+                    if(x.getCIDueño() = b.ciDueño){
+                        print(b.ciDueño, b.nombre, b.apellido, b.edad);
+                    }
+                    if(x.getCIDueño() = c.ciDueño){
+                        print(c.ciDueño, c.nombre, c.apellido, c.edad);
+                    }
+                }
+                if(y.contar(habX) = maximoNro){
+                    if(y.getCIDueño() = this.ciDueño){
+                        print(this.ciDueño, this.nombre, this.apellido, this.edad);
+                    }
+                    if(y.getCIDueño() = a.ciDueño){
+                        print(a.ciDueño, a.nombre, a.apellido, a.edad);
+                    }
+                    if(y.getCIDueño() = b.ciDueño){
+                        print(b.ciDueño, b.nombre, b.apellido, b.edad);
+                    }
+                    if(y.getCIDueño() = c.ciDueño){
+                        print(c.ciDueño, c.nombre, c.apellido, c.edad);
+                    }
+                }
+                if(z.contar(habX) = maximoNro){
+                    if(y.getCIDueño() = this.ciDueño){
+                        print(this.ciDueño, this.nombre, this.apellido, this.edad);
+                    }
+                    if(z.getCIDueño() = a.ciDueño){
+                        print(a.ciDueño, a.nombre, a.apellido, a.edad);
+                    }
+                    if(z.getCIDueño() = b.ciDueño){
+                        print(b.ciDueño, b.nombre, b.apellido, b.edad);
+                    }
+                    if(z.getCIDueño() = c.ciDueño){
+                        print(c.ciDueño, c.nombre, c.apellido, c.edad);
+                    }
+                }
+            }
+        }
+}

@@ -1,0 +1,16 @@
+main(){
+    a <- new Flota("2158ACX", 45, "Juan Ramirez", "26", "Masculino", "1");
+    b <- new Flota();
+    b.leer();
+    //a) Mostrar al pasajero(s) de genero X de mayor edad
+    string x;
+    read(x);
+    b <- b / x;
+    //b) Dado dos flotas mostrar los pasajeros que estan en la primera flota 
+    //pero que no se encuentran en la segunda flota
+    b <- b + a; 
+    //c) Alexis tiene una extrania obsesin donde desea que los hombres 
+    // esten en asientos pares y las mujeres en asientos
+    //impares, dime si Alexis sera feliz en su viaje D:
+    b.mostrar(false);
+}

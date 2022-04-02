@@ -1,0 +1,28 @@
+main(){
+    //a) Instanciar 4 objetos casa y 4 objetos Due ̃no con el siguiente detalle:
+    c1 <- new casa();
+    d1 <- new dueño();
+
+    c2 <- new casa(5678213, "celeste", "los pinos");
+    d2 <- new dueño(5678213, "Juan", "Perez", 48);
+    c3 <- new casa(10278546, "naramjado", "rio seco");
+    d3 <- new dueño(10278546, "Oscar", "Ali", 50);
+
+    c4 <- new casa();
+    c4.leer();
+    d4 <- new dueño();
+    d4.leer();
+    //b) Ordenar las habitaciones de una casa de manera ascendente.
+    c4.ordenar_ascendente();
+    c4.mostrar();
+    //c) Realizar un m ́etodo contar para obtener cuantas habitaciones de tipo X tiene una casa.
+    string x;
+    read(x);
+    print("Existen", c4.contar(x), "habitaciones de tipo", x);
+    //d) Realizar un metodo comparar() para obtener el nombre del dueño de la casa
+    //que tiene mayor cantidad de habitaciones de tipo X.
+    read(x);
+    d1.comparar(d2, d3, d4, c1, c2, c3, c4, x);
+    //f) Sobrecargar el operador - - para eliminar una habitaci ́on de una casa.
+    --c1;
+}
