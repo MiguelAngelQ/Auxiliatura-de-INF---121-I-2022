@@ -68,7 +68,7 @@ class Flota{
             }
             return a;
         }
-        mostrar(bool sw){
+        mostrar(bool flag){
             bool sw <- true;//Hombres en pares, mujeres en impares
             for(i <- to NroPasajeros - 1){
                 if(Pasajero[i, 2] = "Masculino" and strVal(Pasajero[i, 3]) % 2 = 1){
