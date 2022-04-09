@@ -47,8 +47,8 @@ class alimento{
             this.nombre = nombre;
         }
         setPrecio(int precio) {
-		    this.precio = precio;
-	    }
+	    this.precio = precio;
+	}
         int getPrecio() {
             return precio;
         }
