@@ -1,3 +1,37 @@
 main(){
-    
+    //a
+    v1 <- new verdura("quinua", 15, "cereal");
+    v2 <- new verdura();
+    v2.leer();
+    f1 <- new fruta("manzana", 20, "si", "normal", "no");
+    c1 <- new carne("chuleta", 50, "bobino", "si", "especial");
+    c2 <- new carne();
+    c2.leer();
+    //b
+    v1.mostrar();
+    v2.mostrar();
+    f1.mostrar();
+    c1.mostrar();
+    c2.mostrar();
+    //c
+    f1.setNombre("naranja");
+	f1.setPrecio(25);
+	f1.mostrar();
+    //d
+    //Verificar si la verdura 1 tiene los mismos minerales que la verdura 2.
+    if(v1.verificarMinerales(v2)) {
+	    print("Tienen mismos minerales");
+	}else {
+	    print("No tienen mismos minerales");
+	}
+    //e)Comparar el precio de la verdura 1 y la carne 2 y mostrar cual es mas barata.
+    if(v1.getPrecio() = c2.getPrecio()){
+        print("tienen mismos precios");
+    }else{
+        if(v1.getPrecio() > c2.getPrecio()){
+            v1.mostrar();
+        }else{
+            c2.mostrar();
+        }
+    }
 }
