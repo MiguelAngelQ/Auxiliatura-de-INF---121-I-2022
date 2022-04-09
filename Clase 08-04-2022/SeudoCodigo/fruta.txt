@@ -1,0 +1,27 @@
+class fruta:alimento{
+    private:
+        string carbohidratos;
+        string tipo;
+        string azucares;
+    public:
+        fruta(){
+            alimento();
+            carbohidratos <- "grasa";
+            tipo <- "citrico";
+            azucares <- "abc";
+        }
+        fruta(string nom, int pre, string c, string t, string a){
+            alimento(nom, pre);
+            carbohidratos <- c;
+            tipo <- t;
+            azucares <- a;
+        }
+        leer(){
+            alimento::leer();
+            read(carbohidratos, tipo, azucares);
+        }
+        mostrar(){
+            alimento::mostrar();
+            print(carbohidratos, tipo, azucares);
+        }
+}

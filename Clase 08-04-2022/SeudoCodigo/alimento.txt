@@ -1,0 +1,55 @@
+class alimento{
+    protected:
+        string nombre;
+        int precio;
+        int nroV;
+        string v[50];
+        int nroM;
+        string m[50];
+    public:
+        alimento(){
+            nombre <- "papa";
+            precio <- 10;
+            nroV <- 1;
+            v[0] <- "C";
+            nroM <- 1;
+            m[0] <- "Zinc";
+        }
+        alimento(string n, int p){
+            nombre <- n;
+            precio <- p;
+            nroV <- 1;
+            v[0] <- "A";
+            nroM <- 1;
+            m[0] <- "Hierro";
+        }
+        leer(){
+            read(nombre, precio, nroV);
+            for(i <- 0 to nroV - 1){
+                read(v[i]);
+            }
+            read(nroM);
+            for(i <- 0 to nroV - 1){
+                read(m[i]);
+            }
+        }
+        mostrar(){
+            print(nombre, precio, nroV);
+            for(i <- 0 to nroV - 1){
+                print(v[i]);
+            }
+            print(nroM);
+            for(i <- 0 to nroV - 1){
+                print(m[i]);
+            }
+        }
+        setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+        setPrecio(int precio) {
+		    this.precio = precio;
+	    }
+        int getPrecio() {
+            return precio;
+        }
+}

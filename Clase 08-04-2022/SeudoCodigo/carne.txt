@@ -1,0 +1,27 @@
+class carne:alimento{
+    private:
+        string clase;
+        string proteinas;
+        string corte;
+    public:
+        carne(){
+            alimento();
+            clase <- "porcino";
+            proteinas <- "todas";
+            corte <- "filete";
+        }
+        carne(string no, int pr, string c, string p, string co){
+            alimento(no, pr);
+            clase <- c;
+            proteinas <- p;
+            corte <- co;
+        }
+        leer(){
+            alimento::leer();
+            read(clase, proteinas, corte);
+        }
+        mostrar(){
+            alimento::mostrar();
+            print(clase, proteinas, corte);
+        }
+}

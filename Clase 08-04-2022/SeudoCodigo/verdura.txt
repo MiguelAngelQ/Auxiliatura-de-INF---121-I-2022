@@ -1,0 +1,33 @@
+class verdura:alimento{
+    private:
+        string tipo;
+    public:
+        verdura(){
+            alimento();//llamo al constructor de mi padre
+            tipo <- "hortaliza";
+        }
+        verdura(string n, int p, string t){
+            alimento(n, p);
+            tipo <- t;
+        }
+        leer(){
+            alimento::leer();//invocando al leer de mi padre
+            read(tipo);
+        }
+        mostrar(){
+            alimento::mostrar();
+            print(tipo);
+        }
+        boolean verificarMinerales(verdura x) {
+            if(this.nroM != x.nroM) {
+                return false;
+            }
+            //si tienen la misma cantidad de minerales
+            for(i <- 0 to this.nroM - 1) {
+                if(this.m[i] != x.m[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+}
