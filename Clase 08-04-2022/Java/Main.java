@@ -2,8 +2,8 @@
 public class Main {
 
 	public static void main(String[] args) {
-		//a
-		verdura v1 = new verdura("espinaca", 15, "cereal");
+	    //a
+	    verdura v1 = new verdura("espinaca", 15, "cereal");
 	    verdura v2 = new verdura("brocoli", 18, "planta");
 	    fruta f1 = new fruta("manzana", 20, "si", "normal", "no");
 	    carne c1 = new carne("chuleta", 50, "bobino", "si", "especial");
