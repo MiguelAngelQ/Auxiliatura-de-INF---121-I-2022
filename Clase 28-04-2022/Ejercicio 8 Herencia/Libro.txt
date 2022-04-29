@@ -1,0 +1,24 @@
+class Libro{
+    protected:
+        string titulo;
+        string autor;
+        int nroCapitulos;
+        int nroPaginas;
+    
+    public:
+        Libro(){
+            titulo <- "Quien se ha comido mi queso?";
+            autor <- "A. Perez";
+            nroCapitulos <- 8;
+            nroPaginas <- 199;
+        }
+        leer(){
+            read(titulo, autor, nroCapitulos, nroPaginas);
+        }
+        mostrar(){
+            print(titulo, autor, nroCapitulos, nroPaginas);
+        }
+        int getNroPaginas(){
+            return nroPaginas;
+        }
+}

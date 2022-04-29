@@ -1,0 +1,21 @@
+main(){
+    a <- new AudioLibro();
+    b <- new LibroPdf();
+    c <- new Fisico();
+    //c
+    if(a.getPeso() = b.getPeso()){
+        print("tienen pesos iguales");
+    }else{
+        if(a.getPeso() > b.getPeso()){
+            print("El audioLibro tiene mayor peso");
+        }else{
+            print("El libro pdf tiene mayor peso");
+        }
+    }
+    //d
+    if(b.getNroPaginas() = c.getNroPaginas()){
+        print("Tienen mismo nro. de paginas");
+    }else{
+        print("No tienen el mismo nro. de paginas")
+    }
+}

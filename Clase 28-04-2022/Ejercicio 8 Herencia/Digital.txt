@@ -1,0 +1,23 @@
+class Digital:Libro{
+    protected:
+        string sitioWeb;
+        double peso;
+
+    public:
+        Digital(){
+            Libro();
+            sitioWeb <- "www.libros.com";
+            peso <- 365.14;
+        }
+        leer(){
+            Libro::leer();
+            read(sitioWeb, peso);
+        }
+        mostrar(){
+            Libro::mostrar();
+            print(sitioWeb, peso);
+        }
+        double getPeso(){
+            return peso;
+        }
+}

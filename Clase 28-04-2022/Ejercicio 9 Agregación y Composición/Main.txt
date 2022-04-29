@@ -1,0 +1,5 @@
+main(){
+    a <- new Ventas();
+    a.incisoA(2);
+    a.incisoB("Juan");
+}

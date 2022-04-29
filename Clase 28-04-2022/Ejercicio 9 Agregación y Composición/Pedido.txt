@@ -1,0 +1,35 @@
+class Pedido{
+    private:
+        int nroPedido;
+        int nroPlatos;
+        Plato p[100];
+
+    public:
+        Pedido(){
+            nroPedido <- 1;
+            nroPlatos <- 0;
+        }
+        Pedido(int npedido, Plato x){
+            nroPedido <- 2;
+            p[nroPlatos] <- x;//agregacion
+            nroPlatos <- nroPlatos + 1;
+        }
+        agregarPlato(Plato x){
+            p[nroPlatos] <- x;
+            nroPlatos <- nroPlatos + 1;
+        }
+        mostrar(){
+            print(nroPedido, nroPlatos);
+            for(i <- 0 to nroPlatos - 1){
+                p[i].mostrar();
+            }
+        }
+        mostrarSoloPlatos(){
+            for(i <- 0 to nroPlatos - 1){
+                p[i].mostrar();
+            }
+        }
+        int getNroPedido(){
+            return nroPedido;
+        }
+}

@@ -1,0 +1,49 @@
+class Ventas{
+    private:
+        int anio;
+        int nroOrdenes;
+        Orden o[100];
+
+    public:
+        Ventas(){
+            anio <- 2022;
+            nroOrdenes <- 0;
+        }
+        Ventas(int a, int n, Orden z){
+            anio <- a;
+            nroOrdenes <- n;
+            o[nroOrdenes] <- z;//agregar
+            nroOrdenes <- nroOrdenes + 1;
+        }
+        agregaOrden(Orden x){
+            o[nroOrdenes] <- x;
+            nroOrdenes <- nroOrdenes + 1;
+        }
+        mostrar(){
+            print(anio, nroOrdenes);
+            for(i <- to nroOrdenes - 1){
+                o[i].mostrar();
+            }
+        }
+        incisoA(int n){
+            for(i <- to nroOrdenes - 1){
+                if(o[i].getP().getNroPedido() = n){
+                    o[i].getP().mostrarSoloPlatos();
+                }
+            }
+        }
+        incisoB(string x){
+            for(i <- 0 to nroOrdenes - 1){
+                if(o[i].getC().getNombre() = x){
+                    print(o[i].getP().getNroPedido());
+                }
+            }
+        }
+        incisoC(string x){
+            for(i <- 0 to nroOrdenes - 1){
+                if(o[i].getC().getNombre() = x){
+                    o[i].getP().mostrarSoloPlatos();
+                }
+            }
+        }
+}

@@ -1,0 +1,20 @@
+class Fisico:Libro{
+    private:
+        string editorial;
+        string tipoTapa;
+    
+    public:
+        Fisico(){
+            Libro();
+            editorial <- "Don bosco";
+            tipoTapa <- "Carton prensado";
+        }
+        leer(){
+            Libro::leer();
+            read(editorial, tipoTapa);
+        }
+        mostrar(){
+            Libro::mostrar();
+            print(editorial, tipoTapa);
+        }
+}

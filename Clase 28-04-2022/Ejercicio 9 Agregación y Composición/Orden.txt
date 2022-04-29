@@ -1,0 +1,34 @@
+class Orden{
+    private:
+        string fecha;
+        Pedido p;
+        Cliente c;
+    
+    public:
+        Orden(){
+            fecha <- "18/08/2021";
+            p <- new Pedido();
+            c <- new Cliente();
+        }
+        Orden(string f){
+            fecha <- f;
+            p <- new Pedido();
+            c <- new Cliente();
+        }
+        leer(){
+            read(fecha);
+            p.leer();
+            c.leer();
+        }
+        mostrar(){
+            print(fecha);
+            p.mostrar();
+            c.mostrar();
+        }
+        Pedido getP(){
+            return p;
+        }
+        Cliente getC(){
+            return c;
+        }
+}

@@ -1,0 +1,21 @@
+class Plato{
+    private:
+        string nombre;
+        double precio;
+    
+    public:
+        Plato(){
+            nombre <- "Silpancho";
+            precio <- 30,90;
+        }
+        Plato(string n, double p){
+            nombre <- n;
+            precio <- p;
+        }
+        leer(){
+            read(nombre, precio);
+        }
+        mostrar(){
+            print(nombre, precio);
+        }
+}

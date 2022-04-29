@@ -1,0 +1,24 @@
+class Cliente{
+    private:
+        string nombre;
+        string apellido;
+        int ci;
+    
+    public:
+        Cliente(){
+            nombre <- "Juan";
+            apellido <- "Perez";
+            ci <- 12345678;
+        }
+        Cliente(string n, string a, int c){
+            nombre <- n;
+            apellido <- a;
+            ci < -c;
+        }
+        mostrar(){
+            print(nombre, apellido, ci);
+        }
+        string getNombre(){
+            return nombre;
+        }
+}

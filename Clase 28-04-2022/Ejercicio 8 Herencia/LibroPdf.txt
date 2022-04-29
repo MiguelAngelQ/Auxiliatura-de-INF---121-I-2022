@@ -1,0 +1,20 @@
+class LibroPdf:Digital{
+    private:
+        bool acceso;
+        string vista;
+
+    public:
+        LibroPdf(){
+            Digital();
+            acceso <- true;
+            vista <- "A4";
+        }
+        leer(){
+            Digital::leer();
+            read(acceso, vista);
+        }
+        mostrar(){
+            Digital::mostrar();
+            print(acceso, vista);
+        }
+}
