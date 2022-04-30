@@ -1,0 +1,30 @@
+class Expositor{
+    private:
+        string nombre;
+        string genero;
+        string tema;
+    
+    public:
+    Expositor(){
+        nombre <- "Juan Perez";
+        genero <- "Oratoria";
+        tema <- "Tecnicas de oratoria";
+    }
+    Expositor(string n, string g, string t){
+        nombre <- n;
+        genero <- g;
+        tema <- t;
+    }
+    leer(){
+        read(nombre, genero, tema);
+    }
+    mostrar(){
+        print(nombre, genero, tema);
+    }
+    string getGenero(){
+        return genero;
+    }
+    string getTema(){
+        return tema;
+    }
+}

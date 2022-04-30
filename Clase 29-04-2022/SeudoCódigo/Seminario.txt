@@ -1,0 +1,59 @@
+class Seminario{
+    protected:
+        string nombre;
+        string horaInicio;
+        string fecha;
+        int nroExpositores;
+        Expositor e[50];
+        string horaExp[50];
+
+    public:
+        Seminario(){
+            nombre <- "Evento 2022";
+            horaInicio <- "19:30:00";//hh:mm:ss
+            fecha <- "25/04/2022";//dd/mm/aaaa
+            e[0] <- new Expositor();
+            horaExp[0] <- "19:30:00";
+            e[1] <- new Expositor("Alan Brito", "Comedia", "Anecdotas");
+            horaExp[1] <- "20:00:00";
+            nroExpositores <- 2;
+        }
+        Seminario(string n, string h, string f, Expositor a, string b){
+            nombre <- n;
+            horaInicio <- h;
+            fecha <- f;
+            e[0] <- new Expositor();
+            e[0] <- a;
+            horaExp[0] <- b;
+            nroExpositores <- 1;
+        }
+        leer(){
+            read(nombre, horaInicio, fecha, nroExpositores);
+            for(i <- to nroExpositores - 1){
+                e[i] <- new Expositor();
+                e[i].leer();
+                read(horaExp[i]);
+            }
+        }
+        mostrar(){
+            print(nombre, horaInicio, fecha, nroExpositores);
+            for(i <- to nroExpositores - 1){
+                e[i].mostrar();
+                print(horaExp[i]);
+            }
+        }
+        bool incisoC(string temaX){
+            bool sw <- true;//puedo exponer ese tema a las 10:00:00
+            for(i <- to nroExpositores - 1){
+                 if(e[i].getTema() = temaX and horaExp[i] = "10:00:00"){
+                     sw <- false;//ya no puedo
+                 }
+             }
+             return sw;
+        }
+        agregarExpositor(Expositor x){
+            e[nroExpositores] <- x;
+            horaExp[nroExpositores] <- "10:00:00";
+            nroExpositores <- nroExpositores + 1;
+        }
+}

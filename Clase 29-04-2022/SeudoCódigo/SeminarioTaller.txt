@@ -1,0 +1,37 @@
+class SeminarioTaller:Seminario{
+    private:
+        string lugar;
+    
+    public:
+        SeminarioTaller(){
+            Seminario();
+            lugar <- "Auditorio A";
+        }
+        SeminarioTaller(string n, string h, string f, Expositor a, string b, string lug){
+            Seminario(n, h, f, a, b);
+            lugar <- lug;
+        }
+        leer(){
+            Seminario::leer();
+            read(lugar);
+        }
+        mostrar(){
+            Seminario::mostrar();
+            print(lugar);
+        }
+        incisoB(int k, string z){
+            while(k > 0){
+                for(i <- to nroExpositores - 1){
+                    if(e[i].getGenero() = z){
+                        for(j <- i to nroExpositores - 2){
+                            e[j] <- e[j + 1];
+                            horaExp[j] <- horaExp[j + 1];
+                        }
+                        nroExpositores <- nroExpositores - 1;
+                        break;
+                    }
+                }
+                k <- k - 1;
+            }
+        }
+}
