@@ -16,8 +16,8 @@ namespace SegundoParcial2020{
 		
 		public Expositor(){
 			nombre = "Juan Perez";
-        	genero = "Oratoria";
-        	tema = "Tecnicas de oratoria";
+			genero = "Oratoria";
+			tema = "Tecnicas de oratoria";
 		}
 		public Expositor(string n, string g, string t){
 			nombre = n;
@@ -37,10 +37,10 @@ namespace SegundoParcial2020{
 			Console.WriteLine(nombre + ", " + genero + ", " + tema);
 		}
 		public string getGenero(){
-        	return genero;
-    	}
+			return genero;
+		}
 		public string getTema(){
-	        return tema;
-	    }
+			return tema;
+		    }
 	}
 }
