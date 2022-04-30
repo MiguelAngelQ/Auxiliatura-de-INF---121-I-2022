@@ -11,7 +11,7 @@ using System;
 namespace SegundoParcial2020{
 	class Program{
 		public static void Main(string[] args){
-			/*SeminarioTaller a = new SeminarioTaller();
+			SeminarioTaller a = new SeminarioTaller();
 			//a
 			a.leer();
 			a.mostrar();
@@ -21,7 +21,7 @@ namespace SegundoParcial2020{
 			Console.Write("Into Z: ");
 			string z = Console.ReadLine();
 			a.incisoB(k, z);
-			a.mostrar();*/
+			a.mostrar();
 			//c
 			Expositor b = new Expositor();
 			b.leer();
