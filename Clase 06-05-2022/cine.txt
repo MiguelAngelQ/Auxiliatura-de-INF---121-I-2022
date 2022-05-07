@@ -1,0 +1,65 @@
+class cine{
+	private:
+		string nombre;
+		int nro_salas;
+		sala s[10];
+		int nro_peliculas;
+		pelicula p[20];
+	public:
+		cine(){
+			nombre <- "Megacenter";
+			nro_salas <- 2;
+			s[0] <- new sala();
+			s[1] <- new sala(50, "beta", "pequeño");
+			nro_peliculas <- 0;
+		}
+		cine(string n){
+			nombre <- n;
+			nro_salas <- 1;
+			s[0] <- new sala();
+			nro_peliculas <- 0;
+		}
+		leer(){
+			read(nombre, nro_salas);
+			for(i <- 0 to nro_salas - 1){
+				s[i] <- new sala();
+				s[i].leer();
+			}
+			nro_peliculas <- 0;
+		}
+		mostrar(){
+			print(nombre, nro_salas);
+			for(i <- 0 to nro_salas - 1){
+				s[i].mostrar();
+			}
+			print(nro_peliculas);
+			for(i <- 0 to nro_peliculas - 1){
+				p[i].mostrar();
+			}
+		}
+		agrega_pelicula(pelicula x){
+			p[nro_peliculas] <- x;
+			nro_peliculas <- nro_peliculas + 1;
+		}
+		incisoB(){//mostrar la sala con mayor número de personas
+			//primero ver el mayor numero de personas
+			int mayor <- 0;//inicializo en el nro. mas pequeño
+			for(i <- 0 to nro_salas - 1){
+				if(s[i].getNro_personas() > mayor){
+					mayor <- s[i].getNro_personas();
+				}
+			}
+			for(i <- 0 to nro_salas - 1){
+				if(s[i].getNro_personas() = mayor){
+					s[i].mostrar();
+				}
+			}
+		}
+		incisoC(string x, string z){//x nombre, z tipo
+			for(i <- 0 to nro_peliculas - 1){
+				if(p[i].verificarDirectorXytipoZ(x, z) = true){
+					p[i].mostrar();
+				}
+			}
+		}
+}

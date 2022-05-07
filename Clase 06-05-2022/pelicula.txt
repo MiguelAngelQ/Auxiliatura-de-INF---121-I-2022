@@ -1,0 +1,48 @@
+class pelicula{
+	private:
+		string nombre;
+		int nro_directores;
+		director d[10];
+		int nro_actores;
+		actor a[100];
+	public:
+		pelicula(){
+			nombre <- "El rey leon";
+			nro_directores <- 0;
+			nro_actores <- 0;
+		}
+		pelicula(string n){
+			nombre <- n;
+			nro_directores <- 0;
+			nro_actores <- 0;
+		}
+		leer(){
+			read(nombre);
+		}
+		mostrar(){
+			print(nombre, nro_directores);
+			for(i <- 0 to nro_directores - 1){
+				d[i].mostrar();
+			}
+			print(nro_actores);
+			for(i <- 0 to nro_actores - 1){
+				a[i].mostrar();
+			}
+		}
+		agregar_director(director x){
+			d[nro_directores] <- x;
+			nro_directores <- nro_directores + 1;
+		}
+		agregar_actor(actor x){
+			a[nro_actores] <- x;
+			nro_actores <- nro_actores + 1;
+		}
+		bool verificarDirectorXytipoZ(string x, string z){//x nom director, z es tipo director 
+			for(i <- 0 to nro_directores - 1){
+				if(d[i].getNombre() = x and d[i].getTipo() = z){
+					return true;
+				}
+			}
+			return false;
+		}
+}

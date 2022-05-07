@@ -1,0 +1,24 @@
+class director:persona{
+	private:
+		string tipo;
+	public:
+		director(){
+			persona();
+			tipo <- "Accion";
+		}
+		director(string n, string t){
+			persona(n);
+			tipo <- t;
+		}
+		leer(){
+			persona::leer();
+			read(tipo);
+		}
+		mostrar(){
+			persona::mostrar();
+			print(tipo);
+		}
+		string getTipo(){
+			return tipo;
+		}
+}

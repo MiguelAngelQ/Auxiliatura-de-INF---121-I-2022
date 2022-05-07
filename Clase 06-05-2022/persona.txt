@@ -1,0 +1,20 @@
+class persona{
+	protected:
+		string nombre;
+	public:
+		persona(){
+			nombre <- "Juan Perez";
+		}
+		persona(string n){
+			nombre <- n;
+		}
+		leer(){
+			read(nombre);
+		}
+		mostrar(){
+			print(nombre);
+		}
+		string getNombre(){
+			return nombre;
+		}
+}

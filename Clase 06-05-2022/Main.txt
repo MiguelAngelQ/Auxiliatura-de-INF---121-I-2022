@@ -1,0 +1,40 @@
+main(){
+	a1 <- new actor();
+	a2 <- new actor("Carlos Perez", "Protagonista");
+	a3 <- new actor("Maria Montes", "Antagonista");
+	a4 <- new actor("Mario Torrez", "Protagonista");
+	a5 <- new actor("Franco Apaza", "Antagonista");
+	a6 <- new actor("Camilo Ortiz", "Protagonista");
+	
+	d1 <- new director();
+	d2 <- new director("Helen Martinez", "Comedia");
+	d3 <- new director("Gerardo Gonzales", "Documentales");
+
+	p1 <- new pelicula();
+	p1.agregar_actor(a1);
+	p1.agregar_actor(a2);
+	p1.agregar_director(d1);
+	p1.mostrar(); 
+
+	p2 <- new pelicula("No way home");
+	p2.agregar_actor(a3);
+	p2.agregar_actor(a4);
+	p2.agregar_director(d2);
+	p2.mostrar(); 
+
+	p3 <- new pelicula("Dr. Strange");
+	p3.agregar_actor(a5);
+	p3.agregar_actor(a6);
+	p3.agregar_director(d3);
+	p3.mostrar(); 
+
+	c <- new cine();//tiene dos salas
+	c.agrega_pelicula(p1);
+	c.agrega_pelicula(p2);
+	c.agrega_pelicula(p3);
+	c.mostrar();
+	//inciso B
+	c.incisoB();
+	//inciso C
+	c.incisoC("Juan Perez", "Comedia");
+}

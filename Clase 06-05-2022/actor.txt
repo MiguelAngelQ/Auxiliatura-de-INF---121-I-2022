@@ -1,0 +1,21 @@
+class actor:persona{
+	private:
+		string personaje;
+	public:
+		actor(){
+			persona();
+			personaje <- "Antagonista";
+		}
+		actor(string n, string p){
+			persona(n);
+			personaje <- p;
+		}
+		leer(){
+			persona::leer();
+			read(personaje);
+		}
+		mostrar(){
+			persona::mostrar();
+			print(personaje);
+		}
+}

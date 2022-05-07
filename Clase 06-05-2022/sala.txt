@@ -1,0 +1,26 @@
+class sala{
+	private:
+		int nro_personas;
+		string nombre;
+		string tipo;
+	public:
+		sala(){
+			nro_personas <- 100;
+			nombre <- "alfa";
+			tipo <- "mediano";
+		}
+		sala(int n, string no, string t){
+			nro_personas <- n;
+			nombre <- no;
+			tipo <- t;
+		}
+		leer(){
+			read(nro_personas, nombre, tipo);
+		}
+		mostrar(){
+			print(nro_personas, nombre, tipo);
+		}
+		int getNro_personas(){
+			return nro_personas;
+		}
+}
