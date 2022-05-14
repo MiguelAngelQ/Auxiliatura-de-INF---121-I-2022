@@ -1,0 +1,77 @@
+class archLibro{
+    private:
+        string na;//nombre de archivo;
+        libro rLib;//el objeto que guardara nuestro archivo
+    public:
+        archLibro(string na){
+            this.na <- na;
+        }
+        crear(){
+            nLib <- fcreate(na);
+            nLib.fclose();
+        }
+        adicionar(){
+            string op;//S/N
+            try{
+                nLib <- fopen(na, w);
+                do{
+                    rLib <- new libro();
+                    rLib.leer();
+                    nLib.fwrite(rLib);
+                    print("Desea continuar S/N");
+                    read(op);
+                }while(op = "S");
+            }catch(Exception e){
+                print("Error en adicion")
+            }
+        }
+        listar(){
+            try{
+                nLib <- fopen(na, w);
+                while(!nLib.EOF()){
+                    rLib <- (Libro)nLib.fread();
+                    rLib.mostrar();
+                }
+                nLib.fclose();
+            }catch(Exception e){
+                print("Fin de listado")
+            }
+        }
+        //contar los libros de autor x
+        int contar(string x){
+            int cont <- 0;
+            try{
+                nLib <- fopen(na, w);
+                while(!nLib.EOF()){
+                    rLib <- (Libro)nLib.fread();
+                    if(rLib.getAutor() = x){
+                        cont <- cont + 1;
+                    }
+                }
+                nLib.fclose();
+            }catch(Exception e){
+                print("Fin de listado")
+            }
+            return cont;
+        }
+        //eliminar libros con codigo x
+        eliminar(string codX){
+            try{
+                nLib <- fopen(na, w);
+                ncopy <- fopen("copia.dat", w);
+                while(!nLib.EOF()){
+                    rLib <- (Libro)nLib.fread();
+                    if(rLib.getCodigo() != codX){
+                        ncopy.fwrite(rLib);
+                    }
+                }
+                nLib.fclose();
+                ncopy.fclose();
+            }catch(Exception e){
+                print("Fin de elimiar")
+            }finally{
+                nLib.fdelete();
+                ncopy.rename("copia.dat", na);
+            }
+        }
+}

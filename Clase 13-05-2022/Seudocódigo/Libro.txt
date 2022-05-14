@@ -1,0 +1,32 @@
+class libro{
+    private:
+        int codigo;
+        string nombre;
+        string autor;
+        int nro_paginas;
+    public:
+        libro(){
+            codigo <- 1;
+            nombre <- "Donde esta mi queso";
+            autor <- "A. Perez";
+            nro_paginas <- 128;
+        }
+        libro(int c, string n, string a, int nro){
+            codigo <- c;
+            nombre <- n;
+            autor <- a;
+            nro_paginas <- nro;
+        }
+        leer(){
+            read(codigo, nombre, autor, nro_paginas);
+        }
+        mostrar(){
+            print(codigo, nombre, autor, nro_paginas);
+        }
+        string getAutor(){
+            return autor;
+        }
+        int getCodigo(){
+            return codigo;
+        }
+}

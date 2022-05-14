@@ -1,0 +1,36 @@
+main(){
+    archLibro a <- new archLibro("libro2019.dat");
+    string op;
+    do{
+        print("Menu");
+        print("1. crear");
+        print("2. adicionar");
+        print("3. listar");
+        print("4. eliminar");
+        print("5. contar");
+        print("6. salir");
+        read(op);
+        switch(op){
+            case 1:
+                a.crear();
+                break;
+            case 2:
+                a.adicionar();
+                break;
+            case 3:
+                a.listar();
+                break;
+            case 4:
+                string code;
+                read(code);
+                a.eliminar(code);
+            case 5:
+                string x;
+                read(x);
+                a.contar(x);
+            default:
+                print("Introduzca otra opcion")
+                break;
+        }
+    }while(op != 6);
+}
