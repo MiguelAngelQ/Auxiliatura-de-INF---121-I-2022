@@ -1,0 +1,49 @@
+main(){
+    p <- new ArchPerdidas("perdidasmayo.dat");
+    r <- new ArchRutas("rutas.dat");
+    string op;
+    do{
+        print("Menu");
+        print("1. crear ambos");
+        print("2. adicionar perdidas");
+        print("3. listar perdidas");
+        print("4. adicionar rutas");
+        print("5. listar rutas");
+        print("6. Inciso A");
+        print("7. Inciso B");
+        print("10. salir");
+        read(op);
+        switch(op){
+            case 1:
+                p.crear();
+                r.crear();
+                break;
+            case 2:
+                p.adicionar();
+                break;
+            case 3:
+                p.listar();
+                break;
+            case 4:
+                r.adicionar();
+                break;
+            case 5:
+                r.listar();
+                break;
+            case 6:
+                string conductorX;
+                read(conductorX);
+                string placa <- r.obtenerIdBus(conductorX);
+                p.IncisoA(placa);
+                break;
+            case 7:
+                string rutaX;
+                read(rutaX);
+                r.IncisoB(p, rutaX);
+                break;
+            default:
+                print("Finalizado")
+                break;
+        }
+    }while(op != 10);
+}

@@ -1,0 +1,21 @@
+class ObjPerdido{
+    private:
+        string descripcion, observacion, fechaEntrega;
+    public:
+        ObjPerdido(){
+            descripcion <- "monedero";
+            observacion <- "asiento preferencial";
+            fechaEntrega <- "17/05/2022";
+        } 
+        ObjPerdido(string d, string o, string f){
+            descripcion <- d;
+            observacion <- o;
+            fechaEntrega <- f;
+        }
+        leer(){
+            read(descripcion, observacion, fechaEntrega);
+        }
+        mostrar(){
+            print(descripcion, observacion, fechaEntrega);
+        }
+}

@@ -1,0 +1,76 @@
+class ArchPerdidas{
+    private:
+        string na;
+        Perdidas rPer;
+    public:
+        ArchPerdidas(string na){
+            this.na <- na;
+        }
+        crear(){
+            nPer <- fcreate(na);
+            nPer.fclose();
+        }
+        adicionar(){
+            string op;//S/N
+            try{
+                nPer <- fopen(na, w);
+                do{
+                    rPer <- new Perdidas();
+                    rPer.leer();
+                    nPer.fwrite(rPer);
+                    print("Desea continuar S/N");
+                    read(op);
+                }while(op = "S");
+            }catch(Exception e){
+                print("Error en adicion")
+            }finally{
+                nPer.fclose();
+            }
+        }
+        listar(){
+            try{
+                nPer <- fopen(na, w);
+                while(!nPer.EOF()){
+                    rPer <- (Perdidas)nPer.fread();
+                    rPer.mostrar();
+                }
+            }catch(Exception e){
+                print("Fin de listado")
+            }finally{
+                nPer.fclose();
+            }
+        }
+        IncisoA(string placa){
+            try{
+                nPer <- fopen(na, w);
+                while(!nPer.EOF()){
+                    rPer <- (Perdidas)nPer.fread();
+                    //rPer.mostrar();
+                    if(rPer.getIdBus() = placa){
+                        rPer.mostrar(true);
+                    }
+                }
+            }catch(Exception e){
+                print("Fin de listado")
+            }finally{
+                nPer.fclose();
+            }
+        }
+        cantidadPerdidasBusX(string plac){
+            int ans <- 0;
+            try{
+                nPer <- fopen(na, w);
+                while(!nPer.EOF()){
+                    rPer <- (Perdidas)nPer.fread();
+                    if(rPer.getIdBus() = placa){
+                        ans <- rPer.getNroObjPerdidos();
+                    }
+                }
+            }catch(Exception e){
+                print("Fin de listado")
+            }finally{
+                nPer.fclose();
+            }
+            return ans;
+        }
+}

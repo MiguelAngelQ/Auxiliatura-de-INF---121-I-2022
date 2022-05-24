@@ -1,0 +1,37 @@
+class Perdidas{
+    private:
+        string fecha, idBus;
+        int nroObjPerdidos;
+        ObjPerdido op[30];
+    public:
+        Perdidas(){
+            fecha <- "23/05/2022";
+            idBus <- "1234ABC";
+            nroObjPerdidos <- 1;
+            op[0] <- new ObjPerdido();
+        }
+        leer(){
+            read(fecha, idBus, nroObjPerdidos);
+            for(i <- 0 to nroObjPerdidos - 1){
+                op[i] <- = new ObjPerdido();
+                op[i].leer();
+            }
+        }
+        mostrar(){
+            print(fecha, idBus, nroObjPerdidos);
+            for(i <- 0 to nroObjPerdidos - 1){
+                op[i].mostrar();
+            }
+        }
+        mostrar(bool x){
+            for(i <- 0 to nroObjPerdidos - 1){
+                op[i].mostrar();
+            }
+        }
+        string getIdBus(){
+            return idBus;
+        }
+        int getNroObjPerdidos(){
+            return nroObjPerdidos;
+        }
+}

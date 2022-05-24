@@ -1,0 +1,80 @@
+class ArchRutas{
+    private:
+        string na;
+        Ruta rRuta;
+    public:
+        ArchPerdidas(string na){
+            this.na <- na;
+        }
+        crear(){
+            nRuta <- fcreate(na);
+            nRuta.fclose();
+        }
+        adicionar(){
+            string op;//S/N
+            try{
+                nRuta <- fopen(na, w);
+                do{
+                    rRuta <- new Bus();
+                    rRuta.leer();
+                    nRuta.fwrite(rRuta);
+                    print("Desea continuar S/N");
+                    read(op);
+                }while(op = "S");
+            }catch(Exception e){
+                print("Error en adicion")
+            }finally{
+                nRuta.fclose();
+            }
+        }
+        listar(){
+            try{
+                nRuta <- fopen(na, w);
+                while(!nRuta.EOF()){
+                    rRuta <- (Ruta)nRuta.fread();
+                    rRuta.mostrar();
+                }
+            }catch(Exception e){
+                print("Fin de listado")
+            }finally{
+                nRuta.fclose();
+            }
+        }
+        string obtenerIdBus(string conductorX){
+            string ans <- "";
+            try{
+                nRuta <- fopen(na, w);
+                while(!nRuta.EOF()){
+                    rRuta <- (Ruta)nRuta.fread();
+                    for(i <- 0 to rRuta.getNroBuses() - 1){
+                        if(rRuta.getI(i).getConductor() = conductorX){
+                            ans <- rRuta.getI(i).getIdBus();
+                        }
+                    }
+                }
+            }catch(Exception e){
+                print("Fin de listado")
+            }finally{
+                nRuta.fclose();
+            }
+            return ans;
+        }
+        IncisoB(ArchPerdidas p, string nombreRuta){
+            try{
+                nRuta <- fopen(na, w);
+                while(!nRuta.EOF()){
+                    rRuta <- (Ruta)nRuta.fread();
+                    if(rRuta.getNombre() = nombreRuta){
+                        for(i <- 0 to rRuta.getNroBuses() - 1){
+                            string aux <- rRuta.getI().getIdBus();//placa del i-esimo bus
+                            print("placa:", aux, p.cantidadPerdidasBusX(aux));
+                        }
+                    }
+                }
+            }catch(Exception e){
+                print("Fin de listado")
+            }finally{
+                nRuta.fclose();
+            }
+        }
+}

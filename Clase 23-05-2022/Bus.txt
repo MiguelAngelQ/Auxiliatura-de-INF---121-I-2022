@@ -1,0 +1,22 @@
+class Bus{
+    private:
+        string IdBus, tipo, conductor;
+    public:
+        Bus(){
+            idBus <- "1234ABC";
+            tipo <- "Mascarello";
+            conductor <- "Juan Perez Perez";
+        }
+        leer(){
+            read(idBus, tipo, conductor);
+        }
+        mostrar(){
+            print(idBus, tipo, conductor);
+        }
+        string getIdBus(){
+            return idBus;
+        }
+        string getConductor(){
+            return conductor;
+        }
+}

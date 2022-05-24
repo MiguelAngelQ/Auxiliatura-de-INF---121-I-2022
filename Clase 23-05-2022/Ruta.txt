@@ -1,0 +1,34 @@
+class Ruta{
+    private:
+        string nombre;
+        int nroBuses;
+        Bus b[30];
+    public:
+        Ruta(){
+            nombre <- "Integradora";
+            nroBuses <- 1;
+            b[0] <- new Bus();
+        }
+        leer(){
+            read(nombre, nroBuses);
+            for(i <- 0 to nroBuses - 1){
+                b[i] <- new Bus();
+                b[i].leer();
+            }
+        }
+        mostrar(){
+            print(nombre, nroBuses);
+            for(i <- 0 to nroBuses - 1){
+                b[i].mostrar();
+            }
+        }
+        int getNroBuses(){
+            return nroBuses;
+        }
+        Bus getI(int i){
+            return b[i];
+        }
+        string getNombre(){
+            return nombre;
+        }
+}
