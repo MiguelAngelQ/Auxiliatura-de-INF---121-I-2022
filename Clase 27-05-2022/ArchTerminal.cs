@@ -139,7 +139,7 @@ namespace Persistencia100{
                 while( true ) {
             		rLib =new Bus();
                     rLib.lectura(lee);
-                    //ignoraremos al rchivo que queremos borrar
+                    //ignoraremos al objeto que queremos borrar
                     //solo guardaremos los objetos distintos a esa hora
                     if(rLib.getHora() != horaX){
                     	rLib.escribir(escribe);
